@@ -34,6 +34,36 @@ const ItemManager = require("./ItemManager");
 models.item = new ItemManager();
 models.item.setDatabase(pool);
 
+const UserManager = require("./UserManager");
+
+models.user = new UserManager();
+models.user.setDatabase(pool);
+
+const LicenceManager = require("./LicenceManager");
+
+models.licence = new LicenceManager();
+models.licence.setDatabase(pool);
+
+const MarqueManager = require("./MarqueManager");
+
+models.marque = new MarqueManager();
+models.marque.setDatabase(pool);
+
+const FigurineManager = require("./FigurineManager");
+
+models.figurine = new FigurineManager();
+models.figurine.setDatabase(pool);
+
+const PopManager = require("./PopManager");
+
+models.pop = new PopManager();
+models.pop.setDatabase(pool);
+
+const MugManager = require("./MugManager");
+
+models.mug = new MugManager();
+models.mug.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 

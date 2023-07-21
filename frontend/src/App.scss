@@ -1,0 +1,204 @@
+$secondary-color: #63ff0f;
+$bgt: #ffffff21;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  //modification parametre par defaut de Tooltip
+  --rt-opacity: 1;
+}
+
+body,
+.App {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: black;
+  color: white;
+  align-items: center;
+  overflow-x: hidden;
+  a {
+    color: $secondary-color;
+  }
+}
+.addButton {
+  margin: 1rem;
+}
+
+.connect {
+  color: black;
+  background-image: url(./assets/bgphone.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr 5fr 2fr;
+  button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+  .active {
+    background-color: black;
+    color: white;
+  }
+  h1,
+  .form-connection {
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  form {
+    border: 1px solid black;
+    .form-line {
+      display: flex;
+      justify-content: flex-end;
+      margin: 1rem;
+      gap: 1em;
+    }
+  }
+}
+.add {
+  border: 1px solid;
+  max-width: 95%;
+  margin-inline: auto;
+  h2 {
+    margin: 1rem;
+  }
+  .form-line {
+    margin-block: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+.home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  background-color: $bgt;
+  figure {
+    background-color: $bgt;
+    margin: 0.7rem;
+    section {
+      background-color: $bgt;
+      h2 {
+        padding: 0.5rem;
+      }
+    }
+    img {
+      height: 10rem;
+      margin: 0.5rem;
+    }
+  }
+}
+.list {
+  background-color: $bgt;
+  div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    figure {
+      background-color: $bgt;
+      margin: 0.7rem;
+      border: 1px solid;
+      img {
+        height: 10rem;
+        margin-block: 0.5rem;
+      }
+      section {
+        background-color: $bgt;
+      }
+    }
+  }
+}
+button {
+  margin: 1rem;
+}
+nav {
+  background: red;
+  display: flex;
+  align-items: center;
+  top: 0;
+  position: sticky;
+  img {
+    height: 3rem;
+    display: none;
+  }
+  .profile {
+    margin-right: 0.5rem;
+    margin-left: auto;
+  }
+  .tooltip {
+    border: 1px solid;
+    .arrow-tooltip {
+      background-color: $secondary-color;
+    }
+    img {
+      display: initial;
+    }
+    button {
+      background-color: $secondary-color;
+      padding: 1px;
+      margin: initial;
+    }
+  }
+  .menuItems {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    li {
+      margin: 1rem;
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: large;
+        font-weight: 400;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+
+        &::before {
+          content: attr(data-item);
+          transition: 0.5s;
+          color: $secondary-color;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 0;
+          overflow: hidden;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+@media (orientation: landscape) {
+  .connect {
+    background-image: url(./assets/bgpc.jpg);
+    grid-template-rows: 1fr 7fr;
+  }
+  nav {
+    img {
+      display: initial;
+    }
+    .tooltip {
+      font-size: x-large;
+    }
+  }
+  .menuItems {
+    gap: 1rem;
+  }
+  .add {
+    max-width: 20rem;
+  }
+}
